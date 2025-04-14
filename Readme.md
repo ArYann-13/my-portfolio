@@ -2,7 +2,7 @@
 
 Welcome to my **Personal Portfolio Website** — built to showcase my skills, projects, and passion for building amazing digital experiences!
 
-![Portfolio Banner](./public/assets/MainPage.png) 
+![Portfolio Banner](./frontend/public/assets/MainPage.png) 
 
 ---
 
