@@ -30,7 +30,7 @@ const MainSection = ({ onOpen }) => {
                         <h1 className='text-[32px] sm:text-[48px] md:text-[64px] font-[Spartan] text-light-text dark:text-yellow-400 mr-12'>Aryan Verma
                         </h1>
                         <p className='mb-4'>
-                            <ReactTyped className='font-[Merriweather] text-indigo-400  text-[14px] sm:text-[18px] md:text-[24px]  italic' strings={["Web Developer", "Video Editor"]}
+                            <ReactTyped className='font-[Merriweather] text-indigo-400  text-[14px] sm:text-[18px] md:text-[24px]  italic' strings={["Mern StacK Developer", "Web Developer"]}
                                 typeSpeed={120}
                                 backSpeed={80}
                                 loop
