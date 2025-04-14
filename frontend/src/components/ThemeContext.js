@@ -8,7 +8,8 @@ export const useTheme = () => useContext(ThemeContext);
 
 // Theme Provider Component
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
 
   // Function to toggle theme
   const toggleTheme = () => {
