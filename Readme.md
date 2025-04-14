@@ -28,7 +28,7 @@ Welcome to my **Personal Portfolio Website** — built to showcase my skills, pr
 
 ## 📂 Project Structure
 
-```bash
+
 your-portfolio/
   ├── frontend/          # React app (UI)
   │   ├── public/
@@ -48,14 +48,13 @@ Use App Password instead of your Gmail password if 2FA is enabled.
 
 Make sure to NEVER upload your .env to GitHub.
 
-🌐 Live Demo (https://aryann-portfolio.vercel.app/)
+🌐 {Live Demo} (https://aryann-portfolio.vercel.app/)
 👉 View Live Portfolio
 
 📬 Contact Me
 Email: raman809075@gmail.com
 
-LinkedIn: Your LinkedIn
-
+LinkedIn: I'll Add later
 Instagram: @xt_aaryan
 
 GitHub: @ArYann-13
