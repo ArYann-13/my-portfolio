@@ -48,7 +48,7 @@ Use App Password instead of your Gmail password if 2FA is enabled.
 
 Make sure to NEVER upload your .env to GitHub.
 
-🌐 Live Demo 
+🌐 Live Demo <a href="https://aryann-portfolio.vercel.app/">Click here<a/>
 👉 View Live Portfolio
 
 📬 Contact Me
