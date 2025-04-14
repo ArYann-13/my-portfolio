@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+::-webkit-scrollbar{
+    width: 10px;
+    border-radius: 25px;
+}
+::-webkit-scrollbar-track{
+    background: #111;
+
+}
+::-webkit-scrollbar-thumb{
+    background: #6d3cdeb6;
+}
+body{
+   
+    background:#F8FAFC;
+    
+    font-family: Nunito;
+    overflow-x: hidden;
+}
+
+.dark body{
+    background:#0F172A ;
+}
+
