@@ -65,7 +65,7 @@ const ConnectSection = ({ onClose }) => {
         const data = { name, email, message };
 
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL}/contact`, {
+            const response = await fetch('https://aryan-portfolio-s1nd.onrender.com/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
