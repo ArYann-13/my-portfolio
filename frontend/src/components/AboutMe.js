@@ -9,7 +9,7 @@ const AboutMe = () => {
         >
             
           
-            <h2 className="text-[32px] sm:text-[40px] font-bold text-[#1788ab] text-center mb-8">
+            <h2 className="text-[32px] sm:text-[40px] border-b-2 border-[#1788ae] font-bold text-[#1788ab] text-center mb-8">
                 About Me
             </h2>
 

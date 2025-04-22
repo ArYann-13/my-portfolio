@@ -6,6 +6,7 @@ const Education = () => {
       year: "2018-19",
       title: "High School",
       img: "assets/g3-1.jpg",
+      name:"Baba Gurukul Academy",
       link: "https://babagurukul.com/",
       marks:"Marks:",
       numb:"459/500",
@@ -15,6 +16,7 @@ const Education = () => {
       year: "2019-20",
       title: "Intermediate",
       img: "assets/LPS.jpg",
+      name:"Lucknow Public School",
       link: "https://lpsgomtinagar.in/",
       numb:"466/500",
       marks:"Marks:",
@@ -24,6 +26,7 @@ const Education = () => {
       year: "2021-25",
       title: "Graduation",
       img: "assets/BIET.jpg",
+      name:"BIET Jhansi",
       link: "https://bietjhs.ac.in/",
       marks:"YGPA:",
       numb:"",
@@ -32,8 +35,8 @@ const Education = () => {
   ];
 
   return (
-    <section id='education' className='relative  text-light-text dark:text-dark-text bg-light-background dark:bg-dark-background'>
-      <p className="text-center text-3xl text-[#1788ae] m-[30px] font-bold">My Education</p>
+    <section id='education' className='relative  text-light-text dark:text-dark-text bg-light-background dark:bg-dark-background flex flex-col justify-center items-center'>
+      <p className="text-center text-3xl text-[#1788ae] border-b-2 border-[#1788ae] m-[30px] font-bold">My Education</p>
 
       <div className="min-h-screen flex items-center justify-center p-6">
       <div className="relative w-full max-w-3xl">
@@ -84,9 +87,13 @@ const Education = () => {
                     rel="noopener noreferrer"
                     className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex items-center justify-center text-sm font-semibold text-white rounded-lg transition-opacity"
                   >
-                    Visit 🔗
+                    Visit 
                   </a>
                 </div>
+                <h3 className={`text-gray-600 text-lg font-bold mt-3 dark:text-gray-300 ${event.side==="left"?"text-center" :"text-center"}`}>
+                  <span className=''>{event.name}</span>
+                  
+                </h3>
               </div>
             </div>
           ))}

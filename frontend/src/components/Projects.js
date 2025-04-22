@@ -10,11 +10,19 @@ const projectList = [
     tags: ["#react.js", "#openWeatherAPI", "#Tailwind CSS", "#javascript"]
   },
   {
+    title: "WebText To PDF Chrome extension",
+    subtitle: "Easily convert selected text on any webpage into a downloadable PDF with a simple right-click",
+    description: "A lightweight and intuitive Chrome extension that allows users to convert selected webpage text into downloadable PDF files with just one click. It includes a Node.js backend using PDFKit to dynamically generate PDFs, and an elegant EJS interface to manage and view all generated files. Built for productivity, the extension runs client-side while leveraging a server to handle PDF generation and hosting.",
+    imageUrl: "/assets/projectSS/texttoPDF.png",
+    projectLink: "https://github.com/ArYann-13/WEBText-To-PDF-Extension",
+    tags: ["#Tailwind CSS", "#Node.js","#expressJS","#PDFkit", "#EJS (Embedded JavaScript Templates)"]
+  },
+  {
     title: "Iot Devices Management System",
     subtitle: "Management System for IoT devices and Automation",
-    description: "This IoT project enables real-time monitoring and control of home devices through a MERN-based web interface. Using sensors like temperature, humidity, and light (LDR), the system intelligently manages appliances such as fans and lights. The ESP32 microcontroller collects data and controls the fan via a relay, while the light is managed externally. The platform offers a smart, energy-efficient solution for modern homes.",
+    description: "ESP32, DHT22, LDR sensors, and relays. Users can track temperature, humidity, and light intensity in real time via a React dashboard. The system supports auto/manual control for fans and lights and includes graph visualizations with Recharts, historical data logging, and custom automation thresholds via a Node.js backend and MongoDB.",
     imageUrl: "/assets/second-project.png",
-    projectLink: "https://example.com",
+    projectLink: "https://github.com/ArYann-13/Iot-Device-Management-System",
     tags: ["#react.js","#Tailwind CSS", "#Node.js","#expressJS","#cors","#axioms", "#MongoDB"]
   },
   
@@ -23,7 +31,7 @@ const projectList = [
 const Projects = () => {
   return (
     <section id='projects' className="max-w-screen-xl mx-auto px-4 relative text-light-text dark:text-dark-text bg-light-background dark:bg-dark-background pb-8 sm:pb-16 mt-10">
-      <h2 className="text-3xl sm:text-[40px] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#1788ae] sm:border-b-2 border-[#1788ae]">
+      <h2 className="text-3xl sm:text-[40px] relative z-10 font-bold px-4 py-2 w-max mx-auto text-center text-[#1788ae] border-b-2 border-[#1788ae]">
         Projects
       </h2>
 
