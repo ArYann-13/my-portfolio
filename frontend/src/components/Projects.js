@@ -21,7 +21,7 @@ const projectList = [
     title: "Iot Devices Management System",
     subtitle: "Management System for IoT devices and Automation",
     description: "ESP32, DHT22, LDR sensors, and relays. Users can track temperature, humidity, and light intensity in real time via a React dashboard. The system supports auto/manual control for fans and lights and includes graph visualizations with Recharts, historical data logging, and custom automation thresholds via a Node.js backend and MongoDB.",
-    imageUrl: "/assets/second-project.png",
+    imageUrl: "/assets/projectSS/IoT.png",
     projectLink: "https://github.com/ArYann-13/Iot-Device-Management-System",
     tags: ["#react.js","#Tailwind CSS", "#Node.js","#expressJS","#cors","#axioms", "#MongoDB"]
   },
