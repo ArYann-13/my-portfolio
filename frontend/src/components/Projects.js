@@ -2,12 +2,12 @@ import React from 'react';
 
 const projectList = [
   {
-    title: "Weather APP",
-    subtitle: "(Current weather and Forecast)",
-    description: "A clean and responsive weather application that provides real-time weather updates based on user location or searched cities. It displays key information like temperature, humidity, wind speed, and weather conditions using a user-friendly interface. Built for speed and accuracy, the app ensures users always stay updated with the latest weather forecasts.",
-    imageUrl: "/assets/projectSS/weather-app-ss.png",
-    projectLink: "https://github.com/ArYann-13/weather-app",
-    tags: ["#react.js", "#openWeatherAPI", "#Tailwind CSS", "#javascript"]
+    title: "Iot Devices Management System",
+    subtitle: "Management System for IoT devices and Automation",
+    description: "ESP32, DHT22, LDR sensors, and relays. Users can track temperature, humidity, and light intensity in real time via a React dashboard. The system supports auto/manual control for fans and lights and includes graph visualizations with Recharts, historical data logging, and custom automation thresholds via a Node.js backend and MongoDB.",
+    imageUrl: "/assets/projectSS/IoT.png",
+    projectLink: "https://github.com/ArYann-13/Iot-Device-Management-System",
+    tags: ["#react.js","#Tailwind CSS", "#Node.js","#expressJS","#cors","#axioms", "#MongoDB"]
   },
   {
     title: "WebText To PDF Chrome extension",
@@ -18,12 +18,12 @@ const projectList = [
     tags: ["#Tailwind CSS", "#Node.js","#expressJS","#PDFkit", "#EJS (Embedded JavaScript Templates)"]
   },
   {
-    title: "Iot Devices Management System",
-    subtitle: "Management System for IoT devices and Automation",
-    description: "ESP32, DHT22, LDR sensors, and relays. Users can track temperature, humidity, and light intensity in real time via a React dashboard. The system supports auto/manual control for fans and lights and includes graph visualizations with Recharts, historical data logging, and custom automation thresholds via a Node.js backend and MongoDB.",
-    imageUrl: "/assets/projectSS/IoT.png",
-    projectLink: "https://github.com/ArYann-13/Iot-Device-Management-System",
-    tags: ["#react.js","#Tailwind CSS", "#Node.js","#expressJS","#cors","#axioms", "#MongoDB"]
+    title: "Weather APP",
+    subtitle: "(Current weather and Forecast)",
+    description: "A clean and responsive weather application that provides real-time weather updates based on user location or searched cities. It displays key information like temperature, humidity, wind speed, and weather conditions using a user-friendly interface. Built for speed and accuracy, the app ensures users always stay updated with the latest weather forecasts.",
+    imageUrl: "/assets/projectSS/weather-app-ss.png",
+    projectLink: "https://github.com/ArYann-13/weather-app",
+    tags: ["#react.js", "#openWeatherAPI", "#Tailwind CSS", "#javascript"]
   },
   
 ];
