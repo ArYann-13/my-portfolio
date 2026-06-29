@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 const socialLinks = [
   { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/aryan-verma-a68580232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',        hoverColor: 'hover:text-[#0077b5]', label: 'LinkedIn'  },
   { icon: FaGithub,    href: 'https://github.com/ArYann-13',    hoverColor: 'hover:text-gray-300',  label: 'GitHub'    },
-  // { icon: FaYoutube,   href: 'https://www.youtube.com',         hoverColor: 'hover:text-red-500',   label: 'YouTube'   },
+  { icon: FaYoutube,   href: 'https://www.youtube.com',         hoverColor: 'hover:text-red-500',   label: 'YouTube'   },
   { icon: FaXTwitter,  href: 'https://twitter.com',             hoverColor: 'hover:text-sky-400',   label: 'Twitter'   },
   { icon: CgMail,      href: 'mailto:raman809075@gmail.com',    hoverColor: 'hover:text-rose-400',  label: 'Email'     },
 ];
