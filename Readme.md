@@ -43,12 +43,9 @@ Make a `.env` file in the root and add:
 
 GMAIL_USER=your_email@gmail.com GMAIL_PASSWORD=your_app_password
 
-less
-Copy
-Edit
 
 > ⚠️ **Important:** Use an [App Password](https://support.google.com/accounts/answer/185833?hl=en) if 2FA is enabled.  
-> Never commit your `.env` file to GitHub.
+
 
 ---
 

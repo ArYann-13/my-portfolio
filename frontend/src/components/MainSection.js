@@ -1,91 +1,130 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { CgMail } from "react-icons/cg";
 import { ReactTyped } from "react-typed";
-
 import { FaArrowDownLong } from "react-icons/fa6";
 import { Link } from 'react-scroll';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion';
 
+const socialLinks = [
+  { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/aryan-verma-a68580232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', hoverColor: 'hover:text-[#0077b5]', label: 'LinkedIn'  },
+  { icon: FaGithub,    href: 'https://github.com/ArYann-13',   hoverColor: 'hover:text-zinc-700 dark:hover:text-violet-400',   label: 'GitHub'   },
+  { icon: CgMail,      href: 'mailto:raman809075@gmail.com',   hoverColor: 'hover:text-rose-400',   label: 'Email'    },
+  { icon: FaXTwitter,  href: '#',                              hoverColor: 'hover:text-sky-400',    label: 'Twitter'  },
+];
+
+const containerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: { staggerChildren: 0.18, delayChildren: 0.2 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show:   { opacity: 1, y: 0, transition: { duration: 0.7, ease: 'easeOut' } },
+};
 
 const MainSection = ({ onOpen }) => {
-    
-    return (
-        <motion.section id='main-section'  className='bg-light-background dark:bg-dark-background
-        '  initial={{ opacity: 0, y: 50 }}  // Start hidden
-        animate={{ opacity: 1, y: 0 }}   // Animate into view
-        transition={{ duration: 1.8, ease: "easeOut" }} // Smooth transition
-        
+  return (
+    <motion.section
+      id="main-section"
+      className="relative min-h-[calc(100vh-68px)] flex flex-col"
+      initial="hidden"
+      animate="show"
+      variants={containerVariants}
+    >
+      <div className="flex flex-col md:flex-row items-center justify-between max-w-screen-xl mx-auto w-full px-4 sm:px-8 pt-12 pb-6 flex-1 gap-10">
+
+        <div className="flex flex-col items-center md:items-start text-center md:text-left z-10 flex-1">
+          <motion.div variants={itemVariants} className="mb-3">
+            <span className="theme-badge mb-4">
+              👋 Welcome to my portfolio
+            </span>
+          </motion.div>
+
+          <motion.h1
+            variants={itemVariants}
+            className="font-grotesk font-black text-[40px] sm:text-[56px] md:text-[68px] leading-tight tracking-tight
+              text-light-text dark:text-dark-text"
+          >
+            Aryan{' '}
+            <span className="gradient-text">Verma</span>
+          </motion.h1>
+
+          <motion.p variants={itemVariants} className="mt-3 font-merriweather italic text-light-text_sec dark:text-dark-secondary text-lg sm:text-xl md:text-2xl min-h-[2rem]">
+            <ReactTyped
+              strings={['MERN Stack Developer', 'Web Developer', 'Problem Solver']}
+              typeSpeed={100}
+              backSpeed={70}
+              loop
+            />
+          </motion.p>
+
+          <motion.p
+            variants={itemVariants}
+            className="mt-4 max-w-md text-sm sm:text-base text-light-text_sec dark:text-dark-text_sec leading-relaxed"
+          >
+            I build fast, beautiful, and scalable web apps — from pixel-perfect
+            frontends to robust backends.
+          </motion.p>
+
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mt-8 justify-center md:justify-start">
+            <button
+              className="btn-glow text-sm sm:text-base"
+              onClick={onOpen}
+            >
+              Let&apos;s Connect 🚀
+            </button>
+            <Link to="projects" smooth duration={700}>
+              <button className="btn-outline text-sm sm:text-base font-grotesk">
+                View Projects
+              </button>
+            </Link>
+          </motion.div>
+
+          <motion.ul variants={itemVariants} className="flex gap-5 mt-8 justify-center md:justify-start">
+            {socialLinks.map(({ icon: Icon, href, hoverColor, label }) => (
+              <li key={label}>
+                <a href={href} target="_blank" rel="noopener noreferrer" aria-label={label}
+                  className={`block text-light-text_sec dark:text-dark-text_sec ${hoverColor}
+                    transition-all duration-200 hover:scale-125 hover:drop-shadow-[0_0_10px_currentColor]`}>
+                  <Icon size={24} />
+                </a>
+              </li>
+            ))}
+          </motion.ul>
+        </div>
+
+        <motion.div
+          variants={itemVariants}
+          className="flex-1 flex justify-center items-center relative"
         >
-            <div className='flex  -mt-10 relative  '>
 
-                <div className='w-full px-4 max-w-screen-xl mx-auto relative h-[80vh]'>
+          <img
+            src="assets/bg.svg"
+            alt="Aryan Verma"
+            className="relative z-10 w-[260px] sm:w-[340px] md:w-[420px] float-anim drop-shadow-[0_0_40px_rgba(0,0,0,0.12)] dark:drop-shadow-[0_0_60px_rgba(167,139,250,0.4)]"
+          />
+        </motion.div>
+      </div>
 
+      <motion.div
+        variants={itemVariants}
+        className="flex flex-col items-center gap-2 pb-10"
+      >
+        <Link to="about-me" smooth duration={500}>
+          <button className="btn-glow text-sm px-6 py-2 mb-1">About Me</button>
+        </Link>
+        <FaArrowDownLong
+          size={22}
+          className="text-light-text_sec dark:text-dark-accent animate-bounce mt-1"
+        />
+      </motion.div>
+    </motion.section>
+  );
+};
 
-                    <img className='absolute  left-1/2 top-[120px]  -translate-x-1/2 
-                     w-[340px] sm:w-[450px] md:w-[600px] md:h-[550px] md:top-[40px] ' src='assets/bg.png' />
-
-                    <div className='relative ml-4 md:ml-16  translate-y-3/4 '>
-                        <h1 className='text-[32px] sm:text-[48px] md:text-[64px] font-[Spartan] text-light-text dark:text-yellow-400 mr-12'>Aryan Verma
-                        </h1>
-                        <p className='mb-4'>
-                            <ReactTyped className='font-[Merriweather] text-indigo-400  text-[14px] sm:text-[18px] md:text-[24px]  italic' strings={["Mern StacK Developer", "Web Developer"]}
-                                typeSpeed={120}
-                                backSpeed={80}
-                                loop
-                            />
-                        </p>
-
-                        <button className='bg-gradient-to-l from-indigo-500 via-purple-500 to-pink-500
-                            py-2 px-5 rounded-md font-extrabold hover:scale-110 ease-in-out transition 1.3s'
-                            onClick={onOpen}
-                        >Let's Contect
-                        </button>
-
-                    </div>
-
-
-                </div>
-                <ul className=' ml-auto  space-y-6  translate-y-3/4 absolute right-6'>
-                    <li className=''>
-                        <a href="#" target='_blank' className=""><FaLinkedin className='w-8 h-8 hover:text-[#0077b5]   transition duration-300 hover:shadow-[0_0_15px_rgba(112,12,134,0.8)]' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/ArYann-13" target='_blank' className=""><FaGithub className='w-8 h-8 hover:text-[#333]   transition duration-300 hover:shadow-[0_0_15px_rgba(112,12,134,0.8)]' /></a>
-                    </li>
-                    <li>
-                        <a href="mailto:raman809075@gmail.com" target='_blank' className=""><CgMail className='w-8 h-8 hover:text-[#D44638]   transition duration-300 hover:shadow-[0_0_15px_rgba(112,12,134,0.8)]' />
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" target='_blank' className=""><FaYoutube className='w-8 h-8 hover:text-[#FF0000]   transition duration-300 hover:shadow-[0_0_15px_rgba(112,12,134,0.8)]' /></a>
-                    </li>
-                    <li>
-                        <a href="#" target='_blank' className=""><FaXTwitter className='w-8 h-8 hover:text-[#1DA1F2]   transition duration-300 hover:shadow-[0_0_15px_rgba(112,12,134,0.8)]' /></a>
-                    </li>
-                </ul>
-
-
-
-            </div>
-            <div className=' mt-6 relative  h-[100px]'>
-                <div className='flex flex-col justify-center items-center group '>
-
-
-                    <Link to="about-me" smooth={true} duration={500}>
-                        <button className='bg-gradient-to-l from-indigo-500 via-purple-500 to-pink-500
-                py-2 px-5  rounded-md font-extrabold hover:scale-110 ease-in-out transition 1.3s
-                 mb-1 '>About Me</button>
-
-                    </Link>
-
-                    <FaArrowDownLong size={30} className='absolute bottom-5 group-hover:scale-110 ' />
-                </div>
-            </div>
-        </motion.section>
-    )
-}
-
-export default MainSection
+export default MainSection;
