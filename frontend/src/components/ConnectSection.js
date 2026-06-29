@@ -69,7 +69,7 @@ const ConnectSection = ({ onClose }) => {
             //     ? 'https://aryan-portfolio-s1nd.onrender.com/contact'
             //     : 'http://localhost:5000/contact';
 
-            const response = await fetch('https://aryan-portfolio-s1nd.onrender.com/', {
+            const response = await fetch('https://aryan-portfolio-s1nd.onrender.com/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
