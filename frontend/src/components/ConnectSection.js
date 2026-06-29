@@ -65,9 +65,9 @@ const ConnectSection = ({ onClose }) => {
         const data = { name, email, message };
 
         try {
-            const apiUrl = process.env.NODE_ENV === 'production'
+            const apiUrl = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production'
                 ? 'https://aryan-portfolio-s1nd.onrender.com/contact'
-                : 'http://localhost:5000/contact';
+                : 'http://localhost:5000/contact');
 
             const response = await fetch(apiUrl, {
                 method: 'POST',

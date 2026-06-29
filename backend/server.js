@@ -3,42 +3,50 @@ const cors = require('cors');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
-// Middlewares
-app.use(cors());
+app.use(cors({
+  origin: [process.env.CLIENT_URL, 'http://localhost:3000'].filter(Boolean),
+  credentials: true,
+}));
 app.use(express.json());
 
-// Check if env variables are loaded
-console.log('GMAIL_USER:', process.env.GMAIL_USER);
-console.log('GMAIL_PASSWORD:', process.env.GMAIL_PASSWORD);
+app.get('/health', (req, res) => {
+  res.status(200).json({ status: 'ok' });
+});
 
-// Routes
 app.post('/contact', async (req, res) => {
   const { name, email, message } = req.body;
 
-  if (!name || !email || !message) {
+  if (!name?.trim() || !email?.trim() || !message?.trim()) {
     return res.status(400).json({ error: 'Please fill all fields' });
   }
 
+  const user = process.env.GMAIL_USER;
+  const pass = process.env.GMAIL_PASSWORD;
+  const recipient = process.env.GMAIL_TO || user;
+
+  if (!user || !pass) {
+    return res.status(500).json({ error: 'Email service is not configured.' });
+  }
+
   try {
-    // Create transporter
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_PASSWORD,
       },
     });
 
-    
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, 
+      from: `Portfolio Contact <${user}>`,
+      to: recipient,
       subject: `New Message from ${name}`,
       html: `
         <h3>New Contact Form Message</h3>
@@ -48,7 +56,6 @@ app.post('/contact', async (req, res) => {
       `,
     });
 
-    console.log('Email sent successfully!');
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Error sending email:', error);
@@ -56,7 +63,6 @@ app.post('/contact', async (req, res) => {
   }
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Server running on port ${PORT}`);
 });
