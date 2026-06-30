@@ -1,12 +1,13 @@
 const express = require('express');
 const cors = require('cors');
-const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const { Resend } = require('resend');
 
 dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5000;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 app.use(cors({
   origin: [process.env.CLIENT_URL, 'http://localhost:3000', 'https://aryann-portfolio.vercel.app'].filter(Boolean),
@@ -25,28 +26,10 @@ app.post('/contact', async (req, res) => {
     return res.status(400).json({ error: 'Please fill all fields' });
   }
 
-  const user = process.env.GMAIL_USER;
-  const pass = process.env.GMAIL_PASSWORD;
-  const recipient = process.env.GMAIL_TO || user;
-
-  if (!user || !pass) {
-    return res.status(500).json({ error: 'Email service is not configured.' });
-  }
-
   try {
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASSWORD,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `Portfolio Contact <${user}>`,
-      to: recipient,
+    await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: process.env.RECIPIENT_EMAIL,
       subject: `New Message from ${name}`,
       html: `
         <h3>New Contact Form Message</h3>
@@ -54,6 +37,7 @@ app.post('/contact', async (req, res) => {
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
+      reply_to: email,
     });
 
     res.status(200).json({ message: 'Email sent successfully' });
