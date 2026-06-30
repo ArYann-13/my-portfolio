@@ -28,12 +28,10 @@ app.post('/contact', async (req, res) => {
 
   try {
     const { data, error } = await resend.emails.send({
-      from: 'Portfolio Contact <onboarding@resend.dev>',
+      from: `${name}`,
       to: process.env.RECIPIENT_EMAIL,
-      subject: `New Message from ${name}`,
+
       html: `
-        <h3>New Contact Form Message</h3>
-        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
