@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaGithub, FaLinkedin ,FaInstagram} from "react-icons/fa";
+
 import { CgMail } from "react-icons/cg";
 import { ReactTyped } from "react-typed";
 import { FaArrowDownLong } from "react-icons/fa6";
@@ -11,7 +11,7 @@ const socialLinks = [
   { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/aryan-verma-a68580232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', hoverColor: 'hover:text-[#0077b5]', label: 'LinkedIn'  },
   { icon: FaGithub,    href: 'https://github.com/ArYann-13',   hoverColor: 'hover:text-zinc-700 dark:hover:text-violet-400',   label: 'GitHub'   },
   { icon: CgMail,      href: 'mailto:raman809075@gmail.com',   hoverColor: 'hover:text-rose-400',   label: 'Email'    },
-  { icon: FaXTwitter,  href: '#',                              hoverColor: 'hover:text-sky-400',    label: 'Twitter'  },
+  { icon: FaInstagram,   href: 'https://instagram.com/xt_aaryan',         hoverColor: 'hover:text-red-500',   label: 'Instagram'    },
 ];
 
 const containerVariants = {
@@ -56,7 +56,7 @@ const MainSection = ({ onOpen }) => {
 
           <motion.p variants={itemVariants} className="mt-3 font-merriweather italic text-light-text_sec dark:text-dark-secondary text-lg sm:text-xl md:text-2xl min-h-[2rem]">
             <ReactTyped
-              strings={['MERN Stack Developer', 'Web Developer', 'Problem Solver']}
+              strings={['MERN Stack Developer', 'Web Developer' ]}
               typeSpeed={100}
               backSpeed={70}
               loop
@@ -78,11 +78,11 @@ const MainSection = ({ onOpen }) => {
             >
               Let&apos;s Connect 🚀
             </button>
-            <Link to="projects" smooth duration={700}>
+            <a href="/assets/Aryan.pdf" target="_blank" rel="noopener noreferrer">
               <button className="btn-outline text-sm sm:text-base font-grotesk">
-                View Projects
+                Resume
               </button>
-            </Link>
+            </a>
           </motion.div>
 
           <motion.ul variants={itemVariants} className="flex gap-5 mt-8 justify-center md:justify-start">

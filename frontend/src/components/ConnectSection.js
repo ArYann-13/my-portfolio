@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -7,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 const ConnectSection = ({ onClose }) => {
+
+    const [loading, setLoading] = useState(false);
 
     const technologies = [
         {
@@ -61,24 +64,21 @@ const ConnectSection = ({ onClose }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
+        setLoading(true);
+        toast.info('Sending message…');
         const data = { name, email, message };
-
         try {
             const apiUrl = process.env.REACT_APP_API_URL || (process.env.NODE_ENV === 'production'
                 ? 'https://aryan-portfolio-s1nd.onrender.com/contact'
                 : 'http://localhost:5000/contact');
-
             const response = await fetch(apiUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data),
             });
-
             const result = await response.json();
             if (response.ok) {
                 toast.success('Message sent successfully!');
-                // Clear the form
                 setName('');
                 setEmail('');
                 setMessage('');
@@ -88,14 +88,16 @@ const ConnectSection = ({ onClose }) => {
         } catch (error) {
             console.error('Error sending form data:', error);
             toast.error('An error occurred while sending.');
+        } finally {
+            setLoading(false);
         }
     };
 
 
 
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-            <section className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto p-8 rounded-xl border border-gray-400 shadow-lg relative bg-gray-800">
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-70 dark:bg-opacity-80 z-50">
+            <section className="flex flex-col md:flex-row items-center justify-between max-w-5xl mx-auto p-8 rounded-xl border border-gray-600 bg-gray-800 dark:bg-gray-900 shadow-lg relative">
                 <button
                     onClick={onClose}
                     className="absolute top-4 right-4 h-8 w-8 flex items-center justify-center rounded-full bg-gray-700 hover:bg-red-500 text-white text-xl transition-all duration-300 transform hover:scale-110"
@@ -149,8 +151,15 @@ const ConnectSection = ({ onClose }) => {
                         ></textarea>
                         <button
                             type="submit"
-                            className="bg-purple-500 hover:bg-purple-700 transition duration-300 text-white font-semibold py-2 rounded-md"
+                            disabled={loading}
+                            className={`bg-purple-500 hover:bg-purple-700 transition duration-300 text-white font-semibold py-2 rounded-md flex items-center justify-center ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
                         >
+                            {loading ? (
+                                <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8h4l-3 3 3 3h-4z"></path>
+                                </svg>
+                            ) : null}
                             Send Message
                         </button>
                     </form>

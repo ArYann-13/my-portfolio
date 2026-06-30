@@ -1,16 +1,15 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa';
-import { FaXTwitter } from 'react-icons/fa6';
+import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+
 import { CgMail } from 'react-icons/cg';
 import { animateScroll as scroll } from 'react-scroll';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
+  {  icon: FaGithub,    href: 'https://github.com/ArYann-13',   hoverColor: 'hover:text-zinc-700 dark:hover:text-violet-400',   label: 'GitHub'     },
   { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/aryan-verma-a68580232?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',        hoverColor: 'hover:text-[#0077b5]', label: 'LinkedIn'  },
-  { icon: FaGithub,    href: 'https://github.com/ArYann-13',    hoverColor: 'hover:text-gray-300',  label: 'GitHub'    },
-  { icon: FaYoutube,   href: 'https://www.youtube.com',         hoverColor: 'hover:text-red-500',   label: 'YouTube'   },
-  { icon: FaXTwitter,  href: 'https://twitter.com',             hoverColor: 'hover:text-sky-400',   label: 'Twitter'   },
   { icon: CgMail,      href: 'mailto:raman809075@gmail.com',    hoverColor: 'hover:text-rose-400',  label: 'Email'     },
+  { icon: FaInstagram,   href: 'https://instagram.com/xt_aaryan',hoverColor: 'hover:text-red-500',   label: 'Instagram'   },
 ];
 
 const Footer = () => (
@@ -59,7 +58,7 @@ const Footer = () => (
 
       {/* Copyright */}
       <p className="font-grotesk text-xs text-light-text_sec dark:text-dark-text_sec opacity-60">
-        © {new Date().getFullYear()} Aryan Verma · All rights reserved
+        © {new Date().getFullYear()} Aryan Verma 
       </p>
     </div>
   </footer>

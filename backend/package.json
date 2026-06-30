@@ -12,8 +12,8 @@
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^5.2.1",
-    "resend": "^4.0.0",
-    "nodemon": "^3.1.9"
+    "nodemon": "^3.1.9",
+    "resend": "^4.0.0"
   },
   "keywords": [],
   "description": ""

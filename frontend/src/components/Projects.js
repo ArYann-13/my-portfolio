@@ -5,6 +5,20 @@ import { FaGithub } from 'react-icons/fa';
 
 const projectList = [
   {
+    title: "Portfolio Website",
+    subtitle: "Personal portfolio website to showcase projects and skills",
+    description:
+      "A responsive and modern portfolio website built with React.js and Tailwind CSS. Features a clean design, smooth animations, and a seamless user experience across all devices.",
+    imageUrl: "/assets/projectSS/Portfolio.png",
+    projectLink: "https://github.com/ArYann-13/my-portfolio",
+    liveDemoLink:"https://aryann-portfolio.vercel.app/",
+    tags: ["React.js", "Tailwind CSS", "Express", "Resend","framer-motion","React Icons","React Router","React Scroll",
+      "cors"
+    ],
+    accentLight: "from-zinc-600 to-zinc-400",
+    accentDark: "dark:from-violet-600 dark:to-cyan-500",
+  },
+  {
     title: "IoT Devices Management System",
     subtitle: "Management System for IoT devices and Automation",
     description:
